@@ -17,11 +17,5 @@ services:
       dockerfile : Dockerfile
     ports : 
       - "8080:5184"
-    environment : 
-      database : ${database}
-      database_port : ${database_port}
-      port : ${port}
-      password : ${password}
-      server : ${server}
     volumes : 
       - ".:/app"
