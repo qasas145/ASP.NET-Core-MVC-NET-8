@@ -25,6 +25,9 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
         }
         public IActionResult Index()
         {
+            Console.WriteLine("In the /app/BulkyWeb/Areas/Admin/Controllers/ProductController.cs");
+            Console.WriteLine("In the /app/BulkyWeb/Areas/Admin/Controllers/ProductController.cs");
+            Console.WriteLine("In the /app/BulkyWeb/Areas/Admin/Controllers/ProductController.cs");
             List<Product> objCatagoryList = _unitOfWork.Product.GetAll(includeProperties:"Category").ToList();
         
             return View(objCatagoryList);

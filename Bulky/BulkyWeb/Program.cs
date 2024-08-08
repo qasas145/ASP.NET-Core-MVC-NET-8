@@ -11,6 +11,8 @@ using System.Xml.Linq;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.WebHost.UseUrls("http://*:5184");
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -67,7 +69,10 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 StripeConfiguration.ApiKey = builder.Configuration.GetSection("Stripe:SecretKey").Get<string>();
+<<<<<<< HEAD
 
+=======
+>>>>>>> new_one/main
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();

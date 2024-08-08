@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+
+  database_e :
+    image : mcr.microsoft.com/mssql/server:2022-latest
+    container_name : muhsql_new
+    environment : 
+      MSSQL_SA_PASSWORD: 'Hamada1020'
+      ACCEPT_EULA: 'Y'
+    ports:
+      - '1433:1433'
+  backend_e : 
+    image : e_comm
+    container_name : e_comm_c
+    build : 
+      context : .
+      dockerfile : Dockerfile
+    ports : 
+      - "8080:5184"
+    volumes : 
+      - ".:/app"
