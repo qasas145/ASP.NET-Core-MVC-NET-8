@@ -9,12 +9,16 @@ using Stripe;
 using BulkyBook.DataAccess.DbInitializer;
 using System.Xml.Linq;
 
-var builder = WebApplication.CreateBuilder(args);
 
+var builder = WebApplication.CreateBuilder(args);
+Console.WriteLine(builder.Configuration.GetConnectionString("DefaultConnection"));
+Console.WriteLine("Hello wor");
 builder.WebHost.UseUrls("http://*:5184");
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
