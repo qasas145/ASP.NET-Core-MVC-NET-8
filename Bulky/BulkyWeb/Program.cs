@@ -69,10 +69,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 StripeConfiguration.ApiKey = builder.Configuration.GetSection("Stripe:SecretKey").Get<string>();
-<<<<<<< HEAD
 
-=======
->>>>>>> new_one/main
 app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
